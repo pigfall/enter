@@ -53,10 +53,10 @@ erDiagram
 {{- range $n := . }}
     {{ $n.Name }} {
 	{{- if $n.HasOneFieldID }}
-        {{ fmtType $n.ID.Type.String }} {{ $n.ID.Name }}
+        {{ fmtType $n.ID.Type.String }} {{ $n.ID.Name }} "{{$n.ID.Comment}}"
 	{{- end }}
 	{{- range $f := $n.Fields }}
-        {{ fmtType $f.Type.String }} {{ $f.Name }}
+        {{ fmtType $f.Type.String }} {{ $f.Name }} "{{$f.Comment}}"
 	{{- end }}
     }
 {{- end }}
